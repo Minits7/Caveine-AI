@@ -9,7 +9,7 @@ from datetime import datetime
 from datetime import datetime, timedelta
 from discord import app_commands
 from typing import Optional, Dict
-import shelve
+import shelve 
 
 #---------------------------------------------AI Configuration-------------------------------------------------
 
