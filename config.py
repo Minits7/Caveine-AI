@@ -1,5 +1,6 @@
 import os
 import dotenv
+from google.ai.generativelanguage_v1beta.types import safety
 
 dotenv.load_dotenv('.env')
 dotenv.load_dotenv('.env.development')
@@ -7,10 +8,7 @@ dotenv.load_dotenv('.env.development')
 GOOGLE_AI_KEY = os.getenv('GOOGLE_AI_KEY')
 DISCORD_BOT_TOKEN = os.getenv('DISCORD_BOT_TOKEN')
 
-tracked_channels = [
-	# channel_id_1,
-	# thread_id_2,
-]
+tracked_channels = [ 1163366586283999242 ]
 
 text_generation_config = {
 	"temperature": 0.9,
@@ -24,11 +22,12 @@ image_generation_config = {
 	"top_k": 32,
 	# "max_output_tokens": 512,
 }
+
 safety_settings = [
-	# {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
-	# {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
-	# {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
-	# {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"}
+	{"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
+	{"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
+	{"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
+	{"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"}
 ]
 
 bot_template = [
